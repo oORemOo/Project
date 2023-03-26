@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 function SignupScreen({ navigation }) {
+  const [user, setuser] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
@@ -13,6 +14,14 @@ function SignupScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Signup</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="USER"
+        value={user}
+        onChangeText={(text) => setuser(text)}
+        autoCapitalize="none"
+        keyboardType="USER"
+      />
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -27,6 +36,7 @@ function SignupScreen({ navigation }) {
         value={password}
         onChangeText={(text) => setPassword(text)}
         secureTextEntry
+        
       />
       <TextInput
         style={styles.input}
