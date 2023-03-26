@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import Logo from './Assets/imags/Logo.png';
 
 function LoginScreen({ navigation }) {
   const [email, setEmail] = React.useState('');
@@ -11,8 +12,13 @@ function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+        <Image source={require('./Assets/imags/Logo.png')}
+       style={styles.Logo} 
+    /> 
       <Text style={styles.title}>Login</Text>
+      
       <TextInput
+
         style={styles.input}
         placeholder="Email"
         value={email}
@@ -72,6 +78,14 @@ const styles = StyleSheet.create({
     marginTop: 16,
     color: '#0066cc',
   },
+  Logo:{
+    width: 100, 
+    height: 100,
+    marginBottom:100
+    
+
+  }
 });
 
 export default LoginScreen;
+
